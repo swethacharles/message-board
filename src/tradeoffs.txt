@@ -1,0 +1,8 @@
+Trade-offs
+
+- In memory data store vs db. Messages only persist while the app is running but in-memory store is faster to implement.
+- Tests of the API. Did not have time.
+- Sanitising user provided input to prevent for e.g. sql injections is using a db. Would be needed for a prod ready implementation.
+
+
+
