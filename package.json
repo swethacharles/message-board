@@ -1,0 +1,22 @@
+{
+  "name": "message-board",
+  "version": "1.0.0",
+  "description": "Simple message board with rest interface",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swethacharles/message-board.git"
+  },
+  "author": "swetha charles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swethacharles/message-board/issues"
+  },
+  "homepage": "https://github.com/swethacharles/message-board",
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
