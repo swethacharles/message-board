@@ -1,26 +1,25 @@
-import express from "express";
+import express from 'express';
 
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
+
 const messages: string[] = [];
 
 app.get('/getMessages', (_, response) => {
-    response.send(messages.toString());
+  response.send(JSON.stringify({ messages }));
 });
-
 
 app.listen(PORT, () => {
-    console.log(`Started app - listening at ${PORT}`)
+  console.log(`Started app - listening at ${PORT}`);
 });
 
-
-// TODO create method to post message
 app.post('/submitMessage', (request, response) => {
-    messages.push(request.body); // TODO what if it's empty
+  messages.push(request.body.message); // TODO check if valid
 
-    response.status(200).send('Thanks for your message!');
+  response.status(200).send('Thanks for your message!');
+  // TODO Error response code
 });
 
 // TODO write tradeoffs
-
