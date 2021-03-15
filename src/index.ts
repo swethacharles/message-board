@@ -1,5 +1,7 @@
 import express from 'express';
 
+import { parseSubmitMessageRequest } from './helper';
+
 const app = express();
 const PORT = 3000;
 
@@ -16,10 +18,14 @@ app.listen(PORT, () => {
 });
 
 app.post('/submitMessage', (request, response) => {
-  messages.push(request.body.message); // TODO check if valid
+  const parsedMessage = parseSubmitMessageRequest(request);
 
-  response.status(200).send('Thanks for your message!');
-  // TODO Error response code
+  if (parsedMessage) {
+    messages.push(parsedMessage); // TODO check if valid
+    response.status(200).send('Thanks for your message!');
+  } else {
+    response.status(400).send('Could not parse request. Please submit messages in the form { message: <your-message-here> }');
+  }
 });
 
 // TODO write tradeoffs
