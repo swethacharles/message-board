@@ -4,9 +4,9 @@ const app = express();
 const PORT = 3000;
 
 const messages: string[] = [];
+
 app.get('/getMessages', (_, response) => {
-    // TODO add message variable
-    response.send('somebody to lean on - bill withers');
+    response.send(messages.toString());
 });
 
 
