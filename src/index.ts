@@ -24,7 +24,7 @@ app.post('/submitMessage', (request, response) => {
     messages.push(parsedMessage); // TODO check if valid
     response.status(200).send('Thanks for your message!');
   } else {
-    response.status(400).send('Could not parse request. Please submit messages in the form { message: <your-message-here> }');
+    response.status(400).send('Could not parse request. Please submit messages in the form { message: <non-empty-message-here> }');
   }
 });
 
